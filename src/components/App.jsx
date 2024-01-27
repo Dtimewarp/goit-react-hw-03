@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 
-import { Form } from './Form/Form';
+import { ContactForm } from './ContactForm/ContactForm';
 import { SearchBox } from './SearchBox/SearchBox';
 import { ContactList } from './ContactList/ContactList';
 
 import { search } from '../helpers/searchBy';
 import { load, save } from '../helpers/localStorage';
-// import data from '../data/contactList.json';
+
 import css from './App.module.css';
 
 const getInitialContacts = () => {
@@ -39,7 +39,7 @@ export const App = () => {
   return (
     <div className={css.container}>
       <h1 className={css.title}>Phonebook</h1>
-      <Form onAdd={addContact} />
+      <ContactForm onAdd={addContact} />
       <SearchBox value={inputValue} onChange={setInputValue} />
       <ContactList contactList={searchResult} onDelete={deleteContact} />
     </div>
