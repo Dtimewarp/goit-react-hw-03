@@ -7,13 +7,13 @@ import css from './ContactForm.module.css';
 
 const ContactFormSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, 'Too short!')
+    .min(3, 'Too short! Please enter at least 3 characters')
     .max(50, 'Too long!')
-    .required('Required'),
+    .required('Required field'),
   number: Yup.string()
-    .min(3, 'Too short!')
+    .min(3, 'Too short! Please enter at least 3 characters')
     .max(50, 'Too long')
-    .required('Required'),
+    .required('Required field'),
 });
 
 const initialValues = { name: '', number: '' };
